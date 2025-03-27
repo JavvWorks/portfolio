@@ -69,12 +69,20 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />} />
-        <Route path="/project/:id" element={<ProjectPageLayout />} />
-        <Route path="/project/:id" element={<ProjectDetails />} />
-      </Routes>
-    </BrowserRouter>
+  <Routes>
+    <Route
+      path="/*"
+      element={
+        <LandingPage
+          showWelcome={showWelcome}
+          setShowWelcome={setShowWelcome}
+        />
+      }
+    />
+    <Route path="/project/:id" element={<ProjectPageLayout />} />
+  </Routes>
+</BrowserRouter>
+
   );
 }
 
